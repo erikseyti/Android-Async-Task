@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -17,16 +18,20 @@ import java.net.URL;
 public class BuscarImagem extends AsyncTask<String,Integer,Bitmap> {
 
     Activity activity;
+    ProgressBar progressBar;
 
     public BuscarImagem(Activity activity) {
         this.activity = activity;
+
     }
 
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
+
     }
 
+    // Após passar o valor para a thread paralela, a ação seguinte será feita no onPostExecute
     @Override
     protected void onPostExecute(Bitmap bitmap) {
         super.onPostExecute(bitmap);
@@ -37,7 +42,7 @@ public class BuscarImagem extends AsyncTask<String,Integer,Bitmap> {
         }
     }
 
-
+    // será nesse metodo que ira ser usado dentro da thread paralela
     @Override
     protected Bitmap doInBackground(String... strings) {
 
