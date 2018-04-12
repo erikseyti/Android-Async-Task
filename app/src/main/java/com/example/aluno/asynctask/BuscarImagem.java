@@ -67,4 +67,15 @@ public class BuscarImagem extends AsyncTask<String,Integer,Bitmap> {
     protected void onProgressUpdate(Integer... values) {
         super.onProgressUpdate(values);
     }
+
+    // estes metodos são chamados quando a sua thread foi cancelada dentro do Async Task
+    @Override
+    protected void onCancelled(Bitmap bitmap) {
+        super.onCancelled(bitmap);
+    }
+
+    @Override
+    protected void onCancelled() {
+        super.onCancelled();
+    }
 }
