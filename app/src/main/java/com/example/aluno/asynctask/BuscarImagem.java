@@ -43,6 +43,7 @@ public class BuscarImagem extends AsyncTask<String,Integer,Bitmap> {
     }
 
     // será nesse metodo que ira ser usado dentro da thread paralela
+    // String... - declaração de um Array
     @Override
     protected Bitmap doInBackground(String... strings) {
 
@@ -62,7 +63,7 @@ public class BuscarImagem extends AsyncTask<String,Integer,Bitmap> {
     }
 
     // recebe um array de String
-    // String... - declaração de um Array
+    // Integer... - declaração de um Array
     @Override
     protected void onProgressUpdate(Integer... values) {
         super.onProgressUpdate(values);
